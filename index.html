@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VOIDLOCK — Segurança não é brincadeira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="rain"></canvas>
+<div id="glow"></div>
+
+<nav>
+  <div class="logo">VOID<b>LOCK</b></div>
+  <div><a href="#loja">Arsenal</a><a href="#lab">Laboratório</a><a href="#contato">Contato</a></div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="tag">● Sistema ativo · Loja de cibersegurança</span>
+    <h1><span class="glitch" data-t="O vazio">O vazio</span><br>não perdoa<br>brechas.</h1>
+    <p>Na VOIDLOCK a gente tranca o seu mundo digital do outro lado do espelho: ferramentas, defesa e caça a ameaças para quem entende que o perigo nunca dorme.</p>
+    <div class="btns"><a class="btn fill" href="#loja">Entrar no arsenal</a><a class="btn" href="#lab">Testar minha senha</a></div>
+  </div>
+  <div class="eyewrap">
+    <svg id="eye" viewBox="0 0 400 400" aria-label="Olho vigilante da VOIDLOCK" role="img">
+      <defs>
+        <radialGradient id="iris"><stop offset="0" stop-color="#e3c4ff"/><stop offset=".45" stop-color="#9d4dff"/><stop offset="1" stop-color="#2a0b5c"/></radialGradient>
+      </defs>
+      <g class="r3" fill="none" stroke="#5a1fb8" stroke-width="1"><circle cx="200" cy="200" r="190" stroke-dasharray="2 10"/><circle cx="200" cy="200" r="176"/></g>
+      <g class="r1" fill="none" stroke="#9d4dff" stroke-width="2"><circle cx="200" cy="200" r="150" stroke-dasharray="60 20 6 20"/></g>
+      <g class="r2" fill="none" stroke="#c58bff" stroke-width="1.5"><circle cx="200" cy="200" r="124" stroke-dasharray="3 7"/><path d="M200 60 L212 80 L188 80Z M200 340 L212 320 L188 320Z" fill="#c58bff"/></g>
+      <path d="M30 200 Q200 70 370 200 Q200 330 30 200Z" fill="#07030f" stroke="#9d4dff" stroke-width="2.5"/>
+      <g id="pupilwrap">
+        <circle cx="200" cy="200" r="64" fill="url(#iris)"/>
+        <circle cx="200" cy="200" r="64" fill="none" stroke="#e3c4ff" stroke-width="1" stroke-dasharray="1 5"/>
+        <ellipse cx="200" cy="200" rx="13" ry="42" fill="#030108"/>
+        <circle cx="182" cy="180" r="7" fill="#fff" opacity=".85"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<div class="ticker"><div id="tk"></div></div>
+
+<main>
+<section id="loja">
+  <div class="eyebrow rv">// 01 · arsenal</div>
+  <h2 class="rv">Armas para quem <em>não aceita</em> ser a próxima vítima.</h2>
+  <div class="grid">
+    <article class="card rv"><i>🜏</i><h3>Chaves de Segurança FIDO2</h3><p>Hardware físico que bloqueia phishing de verdade. Sem a chave na mão, ninguém entra, nem com a sua senha.</p><small>→ proteção de contas</small></article>
+    <article class="card rv"><i>◉</i><h3>Pentest Sob Demanda</h3><p>Nossos atacantes éticos invadem você primeiro, encontram as falhas e entregam o mapa para fechar cada porta.</p><small>→ teste de invasão</small></article>
+    <article class="card rv"><i>⌬</i><h3>Vigília 24/7 (SOC)</h3><p>Olhos humanos e algoritmos monitorando a sua rede a cada segundo, madrugada, feriado e domingo.</p><small>→ monitoramento contínuo</small></article>
+    <article class="card rv"><i>⛓</i><h3>Cofre de Senhas</h3><p>Uma senha única e impossível para cada serviço, guardada sob criptografia. Você só precisa lembrar de uma.</p><small>→ gestão de credenciais</small></article>
+    <article class="card rv"><i>☣</i><h3>Treinamento Anti-Phishing</h3><p>Simulações reais de golpes para sua equipe aprender a farejar o isco antes de morder o anzol.</p><small>→ fator humano</small></article>
+    <article class="card rv"><i>⟁</i><h3>VPN + Firewall Sombrio</h3><p>Seu tráfego atravessa um túnel criptografado e invisível. Quem espiona só enxerga ruído.</p><small>→ privacidade de rede</small></article>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="eyebrow rv">// 02 · laboratório</div>
+  <h2 class="rv">Sua senha aguenta <em>o vazio?</em></h2>
+  <div class="lab">
+    <div class="term rv">
+      <div class="bar"><b></b><b></b><b></b></div>
+      <label for="pw" style="font-size:12px;color:var(--mute)">&gt; digite uma senha para testar (nada sai do seu navegador)</label>
+      <input id="pw" type="text" autocomplete="off" spellcheck="false" placeholder="••••••••••••">
+      <div class="meter"><div id="fill"></div></div>
+      <div id="verdict">Aguardando entrada…</div>
+    </div>
+    <ul class="tips rv">
+      <li><b>Frases longas vencem símbolos.</b> “cavalo-azul-engole-relâmpago” é mais forte que “P@ssw0rd!”.</li>
+      <li><b>Ative a verificação em duas etapas</b> em e-mail, banco e redes sociais. Hoje.</li>
+      <li><b>Desconfie da urgência.</b> Todo golpe de phishing tenta te apressar para você não pensar.</li>
+      <li><b>Atualize tudo.</b> A maioria das invasões usa falhas que já têm correção disponível.</li>
+      <li><b>Backup 3-2-1:</b> três cópias, dois tipos de mídia, uma fora de casa. Ransomware odeia quem tem backup.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="radar">
+  <div class="eyebrow rv">// radar</div>
+  <h2 class="rv">Enquanto você lê isto, <em>o mundo está sob ataque.</em></h2>
+  <div class="stats rv" id="stats">
+    <div><b data-n="48213">0</b><span>ameaças barradas hoje</span></div>
+    <div><b data-n="1280">0</b><span>clientes sob vigília</span></div>
+    <div><b data-n="99.9" data-d="1">0</b><span>% de disponibilidade</span></div>
+  </div>
+  <div class="mapbox rv"><canvas id="map"></canvas><div class="live" id="live">● ao vivo · simulação</div></div>
+</section>
+
+<section id="terminal">
+  <div class="eyebrow rv">// terminal</div>
+  <h2 class="rv">Converse com <em>o sistema.</em></h2>
+  <div class="term tbox rv">
+    <div class="bar"><b></b><b></b><b></b></div>
+    <div id="tout" aria-live="polite"></div>
+    <div class="tin"><span>voidlock@vazio:~$</span><input id="tin" type="text" autocomplete="off" spellcheck="false" aria-label="Comando"></div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="eyebrow rv">// teste</div>
+  <h2 class="rv">Você cairia <em>nesse golpe?</em></h2>
+  <div class="term tbox rv">
+    <div class="qmsg" id="qmsg"></div>
+    <div class="qbtns" id="qbtns"><button class="btn fill" data-a="1">É golpe</button><button class="btn" data-a="0">É legítimo</button></div>
+    <div id="qfb"></div>
+  </div>
+</section>
+
+<section id="escudo">
+  <div class="eyebrow rv">// escudo</div>
+  <h2 class="rv">Como protegemos <em>este site.</em></h2>
+  <div class="grid">
+    <article class="card rv"><i>▣</i><h3>Sem servidor, sem brecha</h3><p>Esta página é estática: não tem banco de dados, login nem formulário. Não existe cadastro para vazar.</p></article>
+    <article class="card rv"><i>∅</i><h3>Zero coleta de dados</h3><p>Não usamos cookies, rastreadores nem análises. O que você digita aqui não é enviado a ninguém.</p></article>
+    <article class="card rv"><i>⌨</i><h3>Tudo roda no seu navegador</h3><p>O testador de senhas, o terminal e o quiz funcionam localmente. Nada sai do seu aparelho.</p></article>
+    <article class="card rv"><i>⛓</i><h3>Conexões controladas</h3><p>O site só carrega fontes de um provedor conhecido, e os links externos abrem isolados (noopener) para não vazar contexto.</p></article>
+  </div>
+  <details class="pol rv" id="privacidade">
+    <summary>Política de privacidade</summary>
+    <h3>1. Quem somos</h3>
+    <p>VOIDLOCK, loja de cibersegurança. Contato do responsável pelos dados: contato@voidlock.com.br.</p>
+    <h3>2. Quais dados coletamos</h3>
+    <p>Este site não coleta, não armazena e não vende dados pessoais. Ele não usa cookies, nem armazenamento local, nem ferramentas de análise ou publicidade.</p>
+    <h3>3. Conteúdo digitado na página</h3>
+    <p>Senhas, comandos e respostas digitados no testador, no terminal e no quiz são processados apenas no seu navegador e descartados ao fechar ou recarregar a página.</p>
+    <h3>4. Serviços de terceiros</h3>
+    <ul><li>Fontes tipográficas carregadas do Google Fonts, cujo provedor pode registrar o seu endereço IP ao entregá-las.</li><li>Ao clicar em WhatsApp ou e-mail, você sai do site e passa a seguir as regras desses serviços.</li></ul>
+    <h3>5. Seus direitos (LGPD)</h3>
+    <p>Se você nos enviar dados por WhatsApp ou e-mail, pode pedir acesso, correção ou exclusão a qualquer momento pelo contato acima.</p>
+    <h3>6. Atualizações</h3>
+    <p>Esta política pode mudar caso o site passe a coletar dados. A versão em vigor é sempre a publicada nesta página.</p>
+  </details>
+</section>
+
+<section class="manifesto">
+  <h2 class="rv">Segurança <em>não é</em> brincadeira.</h2>
+  <p class="rv">Cada clique descuidado é uma porta entreaberta. Aqui ninguém trata proteção como detalhe, porque o outro lado também não trata o ataque como brincadeira.</p>
+</section>
+
+<section class="contact" id="contato">
+  <div class="eyebrow rv">// 03 · contato</div>
+  <h2 class="rv">Fale com a <em>VOIDLOCK</em> antes que alguém fale com seus dados.</h2>
+  <div class="btns rv" style="justify-content:center">
+    <a class="btn fill" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    <a class="btn" href="mailto:contato@voidlock.com.br">contato@voidlock.com.br</a>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 VOIDLOCK · Todos os direitos trancados. · <a href="#privacidade" onclick="document.getElementById('privacidade').open=true">Privacidade</a></span><span>Segurança não é brincadeira.</span></footer>
+
+<script src="main.js"></script>
+</body>
+</html>
